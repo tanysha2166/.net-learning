@@ -21,8 +21,8 @@ namespace ConsoleApp5
             percent = Console.ReadLine();
             bool check = Double.TryParse(percent, out double percent2);
                 if (check == true)
-                { 
-                    percent2 = Sum / 100*percent2;
+                {
+                    percent2 = PercentCount(percent2, Sum);
                     while (Sum <= 1100)
                     {
                         Sum += percent2;
@@ -39,5 +39,10 @@ namespace ConsoleApp5
             Console.WriteLine("Сумма превысит 1100 через {0} месяца", month);
             Console.ReadLine();
         }
+        public static double PercentCount(double percent, double Sum)
+        {
+            return Sum / 100 * percent;
+        }
     }
 }
+
