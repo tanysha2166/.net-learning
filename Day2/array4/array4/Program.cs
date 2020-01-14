@@ -13,7 +13,7 @@ namespace array4
             char[] str = stroka2.ToCharArray();
             for (int i = 0; i < stroka2.Length; i++)
             {
-                if (str[i] == ' ')
+                if (str[i] == ' ' && str[i+1] != ' ')
                 {
                     number += 1;
                 }

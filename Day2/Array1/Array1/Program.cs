@@ -12,14 +12,15 @@ namespace Array1
         {
             Random random = new Random();
             int[] A = new int[5];
-            double max2 = 0;
             int sumChetnye = 0;
             double sumNechet = 0;
-            int sum1 = 0; double sum2 = 0;
-            int pr1 = 1; double pr2 = 1;
+            int sum1 = 0; 
+            double sum2 = 0;
+            int pr1 = 1; 
+            double pr2 = 1;
             double[,] B = new double[3, 4];
             Console.WriteLine("Введите значения первого массива");
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < A.Length; i++)
             {
                 string a = Console.ReadLine();
                 Int32.TryParse(a, out A[i]);
@@ -27,8 +28,7 @@ namespace Array1
                 pr1 *= A[i];
             }
             Console.WriteLine("Первый массив");
-            Console.Write(A[0] + " " + A[1] + " " + A[2] + " " + A[3] + " " + A[4]);
-            Console.WriteLine();
+            Console.Write(A[0] + " " + A[1] + " " + A[2] + " " + A[3] + " " + A[4] + Environment.NewLine);
             Console.WriteLine("Второй массив");
             for (int c1 = 0; c1 < 3; c1++)
             {
@@ -43,16 +43,15 @@ namespace Array1
                 Console.WriteLine();
             }
             int max1 = A.Max();
+            double max2 = B[0, 0];
             for (int c1 = 0; c1 < 3; c1++)
             {
-                for (int c2 = 0; c2 < 3; c2++)
+                for (int c2 = 0; c2 < 4; c2++)
                 {
-                    if (B[c1, c2] > B[c1, (c2 + 1)])
+                    if (B[c1, c2] > max2)
                     {
                         max2 = B[c1, c2];
                     }
-                    else
-                        max2 = B[c1, (c2 + 1)];
                 }
             }
             for (int i = 1; i < 5; i += 2)
@@ -66,22 +65,20 @@ namespace Array1
                     sumNechet += B[c1, c2];
                 }
             }
-           double min = max2;
+           double min = B[0,0];
             for (int c1 = 0; c1 < 3; c1++)
             {
-                for (int c2 = 0; c2 < 3; c2++)
+                for (int c2 = 0; c2 < 4; c2++)
                 {
                     for (int i = 0; i < 5; i++)
                     {
-                        if (B[c1, c2] < B[c1, (c2 + 1)] && B[c1,c2]< min && A[i] == B[c1,c2] )
+                        if (B[c1, c2] < min && A[i] == B[c1,c2])
                         {
                             min= B[c1, c2];
-                        }
-                       
+                        }                   
                     }
                 }
             }
-
             double sum = sum1 + sum2;
             double pr = pr1 * pr2;
             if (max1 > max2)
@@ -96,9 +93,8 @@ namespace Array1
             Console.WriteLine("Произведение чисел " + pr);
             Console.WriteLine("Сумма четных столбцов массива А " + sumChetnye);
             Console.WriteLine("СУмма начетных столбцов массива B " + sumNechet);
-            Console.WriteLine("Минимальное общее" + min);
+            Console.WriteLine("Минимальное общее " + min);
             Console.ReadLine();
-
         }
     }
 }
