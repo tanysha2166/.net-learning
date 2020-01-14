@@ -13,15 +13,15 @@ namespace task7
             string n1, n2;
             int q;
             bool cycle = false;
-            while (cycle == false)
+            while (!cycle)
             {
-                Console.WriteLine("ВВедите первое число");
+                Console.WriteLine("Введите первое число");
                 n1 = Console.ReadLine();
-                Console.WriteLine("ВВедите второе число");
+                Console.WriteLine("Введите второе число");
                 n2 = Console.ReadLine();
                 bool t1 = Int32.TryParse(n1, out int num1);
                 bool t2 = Int32.TryParse(n2, out int num2);
-                if (t1 == true && t2 == true)
+                if (t1 && t2)
                 {
                     if (num1 < num2)
                     {
@@ -44,9 +44,8 @@ namespace task7
                 else
                 {
                     Console.WriteLine("Введите числа!");
-                }            
+                }
             }
-
             Console.ReadLine();
         } 
     }

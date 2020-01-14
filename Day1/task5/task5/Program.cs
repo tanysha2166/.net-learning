@@ -13,12 +13,12 @@ namespace task5
             bool cycle = false;
             string number;
             double sum =0, count=0;
-            EnterNumber();
-            while (cycle==false)
+            Console.WriteLine("Введите число");
+            while (!cycle)
             {
                 number = Console.ReadLine();
                 bool check = Double.TryParse(number, out double keyboardNumber);
-                if (check == true)
+                if (check)
                 {
                     if (keyboardNumber != 0)
                     {
@@ -32,16 +32,12 @@ namespace task5
                 }
                 else
                 {
-                    EnterNumber();
+                    Console.WriteLine("Введите число");
                 }
             }
             double average = CountAverage(sum, count);
             Console.WriteLine("Сумма = {0}, Среднее арифметическое = {1}, Количество чисел = {2}", sum,average, count);
             Console.ReadLine();
-        }
-        public static void EnterNumber()
-        {
-            Console.WriteLine("Введите число");
         }
         public static double CountAverage(double sum, double count)
         { 

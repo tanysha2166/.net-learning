@@ -7,9 +7,9 @@ namespace ConsoleApp3
         static void Main(string[] args)
         {
             Console.WriteLine("Введите температуру");
-          int number = GetNumber();
-          double Celcia = CountCelcia(number);
-            Console.WriteLine("Температура в Цельсия " + Celcia);
+            int number = GetNumber();
+            double celcia = CountCelcia(number);
+            Console.WriteLine("Температура в Цельсия " + celcia);
             Console.ReadLine();
 
         }

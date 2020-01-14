@@ -11,21 +11,19 @@ namespace ConsoleApp6
         static void Main(string[] args)
         {
             bool cycle = false;
-            while (cycle == false)
+            while (!cycle)
             {
                 Console.WriteLine("Введите длинну прямоугольника");
-                string l = Console.ReadLine();
-                bool check = Int32.TryParse(l, out int length);
+                string lengthStr = Console.ReadLine();
+                bool checkLength = Int32.TryParse(lengthStr, out int length);
                 Console.WriteLine("Введите ширину прямоугольника");
-                string w = Console.ReadLine();
-                bool check2 = Int32.TryParse(w, out int width);
+                string widthStr = Console.ReadLine();
+                bool checkWidth = Int32.TryParse(widthStr, out int width);
                 Console.WriteLine("Введите первый символ");
                 string symbol1 = Console.ReadLine();
                 Console.WriteLine("Введите второй символ");
                 string symbol2 = Console.ReadLine();
-
-                if (check == true && check2 == true)
-
+                if (checkLength && checkWidth)
                 {
                     for (int firstLine = 0; firstLine < length; firstLine++)
                     {
@@ -34,7 +32,6 @@ namespace ConsoleApp6
                     }
                     Console.Write("\n");
                     for (int middle = 0; middle < (width - 2); middle++)
-
                     {
                         Console.Write(symbol1);
                         for (int inside = 2; inside < length; inside++)
@@ -47,17 +44,16 @@ namespace ConsoleApp6
                     for (int lastLine = 0; lastLine < length; lastLine++)
                     {
                         Console.Write(symbol1);
-
                     }
                     Console.Write("\n");
                     cycle = true;
                 }
-
                 else
+                {
                     Console.WriteLine("Длинна и ширина должны быть числами");
+                }
             }
             Console.ReadLine();
-
         }
     }
 }
