@@ -9,17 +9,16 @@ namespace array4
             Console.WriteLine("Введите предложение");
             string stroka = Console.ReadLine();
             int number = 0;
-            string stroka2 = stroka.Trim();
-            char[] str = stroka2.ToCharArray();
-            for (int i = 0; i < stroka2.Length; i++)
+            char[] divisors = { ' ', ',', '.', '!' };
+            string[] stroki = stroka.Split(divisors);
+            for (int i = 0; i < stroki.Length; i++)
             {
-                if (str[i] == ' ' && str[i+1] != ' ')
+                if (stroki[i] != "")
                 {
                     number += 1;
                 }
             }
-            number += 1;
-            Console.WriteLine("Количество слов = " +number);
+            Console.WriteLine("Количество слов = " + number);
             Console.ReadLine();
         }
     }
